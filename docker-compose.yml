@@ -6,11 +6,13 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_HOST_AUTH_METHOD=trust
   web:
+    environment:
+      - DATABASE_URL=postgresql://postgres:Dwlhw1F6yLH6rWqltOqf@rails7-okada.ce8vctdf6fqt.ap-northeast-1.rds.amazonaws.com/myapp_production
     build: .
-    command: bundle exec rails s -p 80 -b '0.0.0.0'
+    # command: bundle exec rails s -p 80 -b '0.0.0.0'
     volumes:
       - .:/myapp
     ports:
-      - "80:80"
+      - "3000:3000"
     depends_on:
       - db
