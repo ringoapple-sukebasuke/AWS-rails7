@@ -18,5 +18,8 @@ module Myapp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # ref: https://qiita.com/Bjp8kHYYPFq8MrI/items/a2844616ded3d354974f
+    config.middleware.delete ActionDispatch::HostAuthorization
   end
 end

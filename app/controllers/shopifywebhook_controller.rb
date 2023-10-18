@@ -1,4 +1,6 @@
 class ShopifywebhookController < ApplicationController
+  require 'faraday'
+
   skip_before_action :verify_authenticity_token
   def order_updated
     order_data = "テスト：在庫が減りました"
