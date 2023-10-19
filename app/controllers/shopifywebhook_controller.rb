@@ -19,7 +19,7 @@ class ShopifywebhookController < ApplicationController
   end
 
   def send_to_slack(message)
-    slack_webhook_url = 'https://hooks.slack.com/services/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'
+    slack_webhook_url = 'https://hooks.slack.com/services/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'
 
     conn = Faraday.new do |faraday|
       faraday.request :json
