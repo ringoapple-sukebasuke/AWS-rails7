@@ -2,11 +2,14 @@ class ShopifywebhookController < ApplicationController
   require 'faraday'
 
   skip_before_action :verify_authenticity_token
-  def order_updated
+
+  def order_created
     order_data = "テスト：在庫が減りました"
     message = build_slack_message(order_data)
-    send_to_slack(message)
-    head :ok
+    response = send_to_slack(message)
+
+    # レスポンスをログに出力
+    Rails.logger.info "Slack Response: #{response.body}"
   end
 
   private
@@ -16,11 +19,11 @@ class ShopifywebhookController < ApplicationController
   end
 
   def send_to_slack(message)
-    slack_webhook_url = 'https://hooks.slack.com/services/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'
+    slack_webhook_url = 'https://hooks.slack.com/services/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'
 
     conn = Faraday.new do |faraday|
       faraday.request :json
-      faraday.response :json
+      faraday.response :json, :content_type => /\bjson$/
       faraday.adapter Faraday.default_adapter
     end
 
