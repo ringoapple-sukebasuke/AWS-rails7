@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 gem "faraday"
 gem "faraday_middleware"
+gem "shopify_api"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
