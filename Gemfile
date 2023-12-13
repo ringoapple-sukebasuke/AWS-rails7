@@ -31,7 +31,7 @@ gem "jbuilder"
 # gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
+# gem "kredis"sho
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -44,7 +44,8 @@ gem "bootsnap", require: false
 
 gem "faraday"
 gem "faraday_middleware"
-gem "shopify_api"
+gem 'shopify_api', '~> 9.0'
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
